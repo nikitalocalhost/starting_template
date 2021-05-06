@@ -22,11 +22,9 @@ config :starting_template, StartingTemplateWeb.Endpoint,
   check_origin: false,
   watchers: [
     node: [
-      "node_modules/webpack/bin/webpack.js",
-      "--mode",
-      "development",
-      "--watch-stdin",
-      cd: Path.expand("../assets", __DIR__)
+      "node_modules/.bin/rollup",
+      "-cw",
+      cd: Path.expand("..", __DIR__)
     ]
   ]
 

@@ -1,0 +1,24 @@
+{
+	"editor.formatOnSave": true,
+	"css.validate": false,
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"files.exclude": {
+		"_build": true,
+		".elixir_ls": true,
+		".husky": true,
+		"deps": true,
+		"node_modules": true,
+		".editorconfig": true,
+		".eslintignore": true,
+		".eslintrc.json": true,
+		".prettierrc.json": true,
+		".prettierignore": true,
+		".formatter.exs": true,
+		"mix.lock": true,
+		"yarn.lock": true,
+		"jest.config.js": true,
+		"tsconfig.json": true
+	}
+}
