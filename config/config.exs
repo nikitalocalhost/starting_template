@@ -27,6 +27,16 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :starting_template, StartingTemplate.Guardian,
+  allowed_algos: ["HS512"],
+  verify_module: Guardian.JWT,
+  issuer: "StartingTemplate",
+  ttl: {30, :days},
+  allowed_drift: 2000,
+  verify_issuer: true,
+  secret_key: %{"k" => "YJTS-4nywpfKfZ9zeElGAA", "kty" => "oct"},
+  serializer: StartingTemplate.Guardian
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

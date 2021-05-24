@@ -43,7 +43,12 @@ defmodule StartingTemplate.MixProject do
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:absinthe, "~> 1.5"},
+      {:absinthe_plug, "~> 1.5"},
+      {:dataloader, "~> 1.0"},
+      {:guardian, "~> 2.0"},
+      {:argon2_elixir, "~> 2.0"}
     ]
   end
 
@@ -55,7 +60,7 @@ defmodule StartingTemplate.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      setup: ["deps.get", "ecto.setup", "cmd yarn src"],
+      setup: ["deps.get", "ecto.setup", "cmd yarn"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test", "cmd yarn test"]

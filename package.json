@@ -5,6 +5,8 @@
 	"author": "Nikita Localhost <nikita.localhost@gmail.com>",
 	"license": "MIT",
 	"scripts": {
+		"build": "rollup -c",
+		"dev": "rollup -cw",
 		"prepare": "husky install",
 		"test": "jest"
 	},

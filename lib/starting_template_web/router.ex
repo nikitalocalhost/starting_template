@@ -11,12 +11,23 @@ defmodule StartingTemplateWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug StartingTemplateWeb.Context
   end
 
   scope "/", StartingTemplateWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphql", Absinthe.Plug, schema: StartingTemplateWeb.Schema
+
+    if Mix.env() in [:dev, :test] do
+      forward "/graphiql", Absinthe.Plug.GraphiQL, schema: StartingTemplateWeb.Schema
+    end
   end
 
   # Other scopes may use custom stacks.
